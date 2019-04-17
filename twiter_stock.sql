@@ -33,9 +33,20 @@ Social_Score float,
 Governance_Score float
 );
 
+ALTER TABLE summary
+ADD CONSTRAINT stock_tickfk
+FOREIGN KEY (Ticker)
+REFERENCES profile(Ticker);
+
+ALTER TABLE sustainability
+ADD CONSTRAINT stock_tickfk_2
+FOREIGN KEY (Ticker)
+REFERENCES profile(Ticker);
 
 -- Testing
 -- ALTER TABLE summary
 -- MODIFY COLUMN Earnings_Date date;
+
+
 
 SELECT * FROM sustainability
